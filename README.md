@@ -1,3 +1,5 @@
+This is a simple calculator app built in React that uses the math.js library to handle the mathematical exaluation
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

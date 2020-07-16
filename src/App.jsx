@@ -24,7 +24,6 @@ class App extends Component {
   
   handleEqual = () => {
     if (this.state.input.includes("x")){
-      debugger
       this.setState({ input: math.evaluate(this.state.input.replace("x","*")) });
     }else{
       this.setState({input: math.evaluate(this.state.input)});

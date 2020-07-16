@@ -5,7 +5,6 @@ import {Input} from './components/Input';
 import {ClearButton} from './components/ClearButton';
 import * as math from "mathjs";
 class App extends Component {
-
   constructor(props){
     super(props);
 
@@ -20,8 +19,16 @@ class App extends Component {
   };
 
   // uses the math.js library to evaluate input functions and do the math operations.
+  //MathJS evaluates an asterisk to multiply, for ease of use, 'x' appears on the calculator 
+  // but is swapped out for an 'x' for the MathJS calculation.
+  
   handleEqual = () => {
-    this.setState({input: math.evaluate(this.state.input)});
+    if (this.state.input.includes("x")){
+      debugger
+      this.setState({ input: math.evaluate(this.state.input.replace("x","*")) });
+    }else{
+      this.setState({input: math.evaluate(this.state.input)});
+    };
   };
 
   render() {
@@ -39,7 +46,7 @@ class App extends Component {
         <Button handleClick={this.addToInput}>4</Button>
         <Button handleClick={this.addToInput}>5</Button>
         <Button handleClick={this.addToInput}>6</Button>
-        <Button handleClick={this.addToInput}>*</Button>
+        <Button handleClick={this.addToInput}>x</Button>
       </div>
       <div className = "row">
         <Button handleClick={this.addToInput}>1</Button>
